@@ -1,4 +1,4 @@
-package com.fcolucasvieira.auth.domain;
+package com.fcolucasvieira.auth.domain.product;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

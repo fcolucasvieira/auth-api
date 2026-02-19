@@ -1,8 +1,8 @@
 package com.fcolucasvieira.auth.controllers;
 
-import com.fcolucasvieira.auth.domain.Product;
-import com.fcolucasvieira.auth.domain.ProductRequestDTO;
-import com.fcolucasvieira.auth.domain.ProductResponseDTO;
+import com.fcolucasvieira.auth.domain.product.Product;
+import com.fcolucasvieira.auth.domain.product.ProductRequestDTO;
+import com.fcolucasvieira.auth.domain.product.ProductResponseDTO;
 import com.fcolucasvieira.auth.repositories.ProductRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
