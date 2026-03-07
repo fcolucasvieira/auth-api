@@ -1,11 +1,11 @@
-package com.fcolucasvieira.auth.controllers;
+package com.fcolucasvieira.auth.controller;
 
-import com.fcolucasvieira.auth.domain.user.AuthenticationDTO;
-import com.fcolucasvieira.auth.domain.user.LoginResponseDTO;
-import com.fcolucasvieira.auth.domain.user.RegisterDTO;
+import com.fcolucasvieira.auth.dto.auth.AuthenticationDTO;
+import com.fcolucasvieira.auth.dto.auth.LoginResponseDTO;
+import com.fcolucasvieira.auth.dto.auth.RegisterDTO;
 import com.fcolucasvieira.auth.domain.user.User;
 import com.fcolucasvieira.auth.infra.security.TokenService;
-import com.fcolucasvieira.auth.repositories.UserRepository;
+import com.fcolucasvieira.auth.repository.UserRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("auth")
-public class AuthenticationController {
+public class AuthController {
     @Autowired
     private AuthenticationManager authenticationManager;
 

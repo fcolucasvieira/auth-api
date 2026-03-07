@@ -1,6 +1,6 @@
-package com.fcolucasvieira.auth.services;
+package com.fcolucasvieira.auth.service;
 
-import com.fcolucasvieira.auth.repositories.UserRepository;
+import com.fcolucasvieira.auth.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -8,7 +8,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
-public class AuthorizationService implements UserDetailsService {
+public class AuthService implements UserDetailsService {
     @Autowired
     UserRepository repository;
 

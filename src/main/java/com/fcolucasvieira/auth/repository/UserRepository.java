@@ -1,4 +1,4 @@
-package com.fcolucasvieira.auth.repositories;
+package com.fcolucasvieira.auth.repository;
 
 import com.fcolucasvieira.auth.domain.user.User;
 import org.springframework.data.jpa.repository.JpaRepository;

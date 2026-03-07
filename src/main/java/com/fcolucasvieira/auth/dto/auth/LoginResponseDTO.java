@@ -1,4 +1,4 @@
-package com.fcolucasvieira.auth.domain.user;
+package com.fcolucasvieira.auth.dto.auth;
 
 public record LoginResponseDTO(String token) {
 }

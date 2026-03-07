@@ -1,4 +1,4 @@
-package com.fcolucasvieira.auth.domain.product;
+package com.fcolucasvieira.auth.dto.product;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
