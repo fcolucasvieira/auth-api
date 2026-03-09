@@ -3,6 +3,10 @@ package com.fcolucasvieira.auth.controller;
 import com.fcolucasvieira.auth.dto.product.ProductRequestDTO;
 import com.fcolucasvieira.auth.dto.product.ProductResponseDTO;
 import com.fcolucasvieira.auth.service.ProductService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -20,6 +24,13 @@ public class ProductController {
         this.productService = productService;
     }
 
+    @SecurityRequirement(name = "bearerAuth")
+    @Operation(
+            summary = "Create product",
+            description = "Creates a new product. Requires JWT authentication."
+    )
+    @ApiResponse(responseCode = "201", description = "Product created successfully")
+    @ApiResponse(responseCode = "401", description = "Unauthorized")
     @PostMapping
     public ResponseEntity<ProductResponseDTO> postProduct(@RequestBody @Valid ProductRequestDTO request){
 
@@ -28,8 +39,15 @@ public class ProductController {
         return ResponseEntity.status(201).body(response);
     }
 
+    @SecurityRequirement(name = "bearerAuth")
+    @Operation(
+            summary = "List all products",
+            description = "Returns a paginated list of products. Requires JWT authentication."
+    )
     @GetMapping
-    public ResponseEntity<Page<ProductResponseDTO>> getAllProducts(Pageable pageable){
+    public ResponseEntity<Page<ProductResponseDTO>> getAllProducts(
+            @Parameter(description = "Pagination parameters (page, size, sort)")
+            Pageable pageable){
         return ResponseEntity.ok(productService.getAll(pageable));
         }
 }

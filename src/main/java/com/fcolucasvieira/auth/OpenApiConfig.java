@@ -2,6 +2,8 @@ package com.fcolucasvieira.auth;
 
 import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.OpenAPI;
+import io.swagger.v3.oas.models.info.Contact;
+import io.swagger.v3.oas.models.info.Info;
 import io.swagger.v3.oas.models.security.SecurityRequirement;
 import io.swagger.v3.oas.models.security.SecurityScheme;
 import org.springframework.context.annotation.Bean;
@@ -10,17 +12,35 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class OpenApiConfig {
     @Bean
-    public OpenAPI customOpenAPI(){
-        final String securitySchemaName = "BearerAuth";
+    public OpenAPI customOpenAPI() {
+
+        final String securitySchemeName = "bearerAuth";
 
         return new OpenAPI()
-                .addSecurityItem(new SecurityRequirement().addList(securitySchemaName))
+                .info(new Info()
+                        .title("Auth & Products API")
+                        .version("1.0")
+                        .description("""
+                        API REST para autenticação de usuários e gerenciamento de produtos.
+
+                        Funcionalidades:
+                        - Registro de usuário
+                        - Login com JWT
+                        - Criação de produtos (autenticado)
+                        - Listagem de produtos com paginação (autenticado)
+                        """)
+                        .contact(new Contact()
+                                .name("Lucas Vieira")
+                                .email("lucas@email.com")
+                        )
+                )
+                .addSecurityItem(new SecurityRequirement().addList(securitySchemeName))
                 .components(
                         new Components()
                                 .addSecuritySchemes(
-                                        securitySchemaName,
+                                        securitySchemeName,
                                         new SecurityScheme()
-                                                .name(securitySchemaName)
+                                                .name(securitySchemeName)
                                                 .type(SecurityScheme.Type.HTTP)
                                                 .scheme("bearer")
                                                 .bearerFormat("JWT")
