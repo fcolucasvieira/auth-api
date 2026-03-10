@@ -21,17 +21,17 @@ public class OpenApiConfig {
                         .title("Auth & Products API")
                         .version("1.0")
                         .description("""
-                        API REST para autenticação de usuários e gerenciamento de produtos.
+                        API REST para autenticação de usuários e gerência de produtos.
 
                         Funcionalidades:
-                        - Registro de usuário
-                        - Login com JWT
-                        - Criação de produtos (autenticado)
-                        - Listagem de produtos com paginação (autenticado)
+                        - Registro de usuário;
+                        - Login;
+                        - Criação de produtos (autenticado);
+                        - Listagem de produtos com paginação (autenticado);
                         """)
                         .contact(new Contact()
                                 .name("Lucas Vieira")
-                                .email("lucas@email.com")
+                                .email("fclucasvieira@gmail.com")
                         )
                 )
                 .addSecurityItem(new SecurityRequirement().addList(securitySchemeName))

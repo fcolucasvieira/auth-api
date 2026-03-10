@@ -5,6 +5,7 @@ import com.fcolucasvieira.auth.dto.product.ProductResponseDTO;
 import com.fcolucasvieira.auth.service.ProductService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.Parameters;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
@@ -44,6 +45,11 @@ public class ProductController {
             summary = "List all products",
             description = "Returns a paginated list of products. Requires JWT authentication."
     )
+    @Parameters({
+            @Parameter(name = "page", description = "Page number", example = "0"),
+            @Parameter(name = "size", description = "Quantity per page", example = "6"),
+            @Parameter(name = "sort", description = "Sorting in field format,asc|desc", example = "name,asc")
+    })
     @GetMapping
     public ResponseEntity<Page<ProductResponseDTO>> getAllProducts(
             @Parameter(description = "Pagination parameters (page, size, sort)")

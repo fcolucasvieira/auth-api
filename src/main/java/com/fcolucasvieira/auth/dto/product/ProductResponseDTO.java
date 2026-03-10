@@ -1,5 +1,8 @@
 package com.fcolucasvieira.auth.dto.product;
 
-public record ProductResponseDTO(String id,
+import java.math.BigDecimal;
+import java.util.UUID;
+
+public record ProductResponseDTO(UUID id,
                                  String name,
-                                 Integer price) {}
+                                 BigDecimal price) {}

@@ -1,13 +1,13 @@
 package com.fcolucasvieira.auth.domain.product;
 
-import com.fcolucasvieira.auth.dto.product.ProductRequestDTO;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.math.BigDecimal;
 import java.util.UUID;
 
-@Table(name = "product")
-@Entity(name = "product")
+@Table(name = "products")
+@Entity(name = "products")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -16,9 +16,9 @@ import java.util.UUID;
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
+    private UUID id;
 
     private String name;
 
-    private Integer price;
+    private BigDecimal price;
 }
