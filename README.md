@@ -1,6 +1,6 @@
 # 🔐 Spring Boot JWT Authentication API
 
-![Java](https://img.shields.io/badge/java-21-orange?style=for-the-badge\&logo=openjdk)
+![Java](https://img.shields.io/badge/java-21-red?style=for-the-badge\&logo=openjdk)
 ![Spring Boot](https://img.shields.io/badge/spring_boot-4.0.2-brightgreen?style=for-the-badge\&logo=springboot)
 ![PostgreSQL](https://img.shields.io/badge/postgresql-database-blue?style=for-the-badge\&logo=postgresql)
 ![JWT](https://img.shields.io/badge/JWT-authentication-black?style=for-the-badge\&logo=jsonwebtokens)
